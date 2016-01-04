@@ -12,7 +12,7 @@
     "backbone",
     "hovercard"
   ],
-  "author": "zeeshan ahmed",
+  "author": "zeeshan ahmed (www.zeet.in)",
   "license": "MIT",
   "devDependencies": {
     "gulp-rename": "~1.2.2",
