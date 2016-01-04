@@ -1,7 +1,7 @@
 ((w) ->
 
 	class hoverView extends Backbone.View
-		tagName:'div'
+
 		delegate:()->
 			@selector.on('show.bs.popover',@onshowcallback)
 			@selector.on('shown.bs.popover',@aftershowcallback)
@@ -16,8 +16,10 @@
 			return @
 
 		initialize:(opt) ->
+			if(opt.el)
+				@el = opt.el
 			if(opt.selector)
-				@selector = $(opt.selector)
+				@el = $(opt.selector)
 			if(opt.template)
 				@template = _.template(opt.template)
 			if(opt.popover_opt)
@@ -34,7 +36,7 @@
 			return
 		hide:()->
 			@selector.popover('hide')
-			return			
+			return
 
 		render:() ->
 			@$el.empty()
@@ -45,8 +47,8 @@
 			return @
 
 
-	
+
 		Backbone.hovercard = (opt)->
 			(new hoverView(opt).render())
-	
+
 )(window)
