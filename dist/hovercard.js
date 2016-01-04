@@ -11,8 +11,8 @@ var extend = function(child, parent) { for (var key in parent) { if (hasProp.cal
     }
 
     hoverView.prototype.delegate = function() {
-      this.selector.on('show.bs.popover', this.onshowcallback);
-      this.selector.on('shown.bs.popover', this.aftershowcallback);
+      this.el.on('show.bs.popover', this.onshowcallback);
+      this.el.on('shown.bs.popover', this.aftershowcallback);
     };
 
     hoverView.prototype.onShow = function(callback) {
@@ -44,15 +44,15 @@ var extend = function(child, parent) { for (var key in parent) { if (hasProp.cal
     };
 
     hoverView.prototype.show = function() {
-      this.selector.popover('show');
+      this.el.popover('show');
     };
 
     hoverView.prototype.destroy = function() {
-      this.selector.popover('destroy');
+      this.el.popover('destroy');
     };
 
     hoverView.prototype.hide = function() {
-      this.selector.popover('hide');
+      this.el.popover('hide');
     };
 
     hoverView.prototype.render = function() {
@@ -60,7 +60,7 @@ var extend = function(child, parent) { for (var key in parent) { if (hasProp.cal
       this.$el.html(this.template(this.model.attributes));
       this.popover_opt['content'] = this.$el.html();
       this.delegate();
-      this.selector.popover(this.popover_opt);
+      this.el.popover(this.popover_opt);
       return this;
     };
 

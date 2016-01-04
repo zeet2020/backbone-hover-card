@@ -3,8 +3,8 @@
 	class hoverView extends Backbone.View
 
 		delegate:()->
-			@selector.on('show.bs.popover',@onshowcallback)
-			@selector.on('shown.bs.popover',@aftershowcallback)
+			@el.on('show.bs.popover',@onshowcallback)
+			@el.on('shown.bs.popover',@aftershowcallback)
 			return
 
 		onShow:(callback)->
@@ -29,13 +29,13 @@
 			return
 
 		show:()->
-			@selector.popover('show')
+			@el.popover('show')
 			return
 		destroy:()->
-			@selector.popover('destroy')
+			@el.popover('destroy')
 			return
 		hide:()->
-			@selector.popover('hide')
+			@el.popover('hide')
 			return
 
 		render:() ->
@@ -43,7 +43,7 @@
 			@$el.html @template(@model.attributes)
 			@popover_opt['content'] = @$el.html()
 			@delegate()
-			@selector.popover(@popover_opt)
+			@el.popover(@popover_opt)
 			return @
 
 
