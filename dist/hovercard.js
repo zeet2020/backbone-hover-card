@@ -10,8 +10,6 @@ var extend = function(child, parent) { for (var key in parent) { if (hasProp.cal
       return hoverView.__super__.constructor.apply(this, arguments);
     }
 
-    hoverView.prototype.tagName = 'div';
-
     hoverView.prototype.delegate = function() {
       this.selector.on('show.bs.popover', this.onshowcallback);
       this.selector.on('shown.bs.popover', this.aftershowcallback);
@@ -28,8 +26,11 @@ var extend = function(child, parent) { for (var key in parent) { if (hasProp.cal
     };
 
     hoverView.prototype.initialize = function(opt) {
+      if (opt.el) {
+        this.el = opt.el;
+      }
       if (opt.selector) {
-        this.selector = $(opt.selector);
+        this.el = $(opt.selector);
       }
       if (opt.template) {
         this.template = _.template(opt.template);
@@ -63,7 +64,7 @@ var extend = function(child, parent) { for (var key in parent) { if (hasProp.cal
       return this;
     };
 
-    window.hover = function(opt) {
+    Backbone.hovercard = function(opt) {
       return new hoverView(opt).render();
     };
 
