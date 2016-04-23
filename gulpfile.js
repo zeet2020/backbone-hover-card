@@ -3,6 +3,8 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	rename = require('gulp-rename'),
 	coffee = require('gulp-coffee');
+	watch = require('gulp-watch');
+
 
 gulp.task('default',function(){
 	
@@ -15,3 +17,6 @@ gulp.task('default',function(){
        .pipe(gulp.dest('dist/'));
 
 });
+
+gulp.watch('./src/*.coffee',['default']);
+

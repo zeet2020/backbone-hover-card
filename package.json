@@ -1,5 +1,3 @@
-
-
 {
   "name": "hovercard",
   "version": "0.0.1",
@@ -17,11 +15,12 @@
   "author": "zeeshan ahmed (www.zeet.in)",
   "license": "MIT",
   "devDependencies": {
-    "gulp-rename": "~1.2.2",
-    "gulp-concat": "~2.6.0",
-    "gulp-uglify": "~1.5.1",
-    "gulp-coffee": "~2.3.1",
     "gulp": "~3.9.0",
+    "gulp-coffee": "~2.3.1",
+    "gulp-concat": "~2.6.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-uglify": "~1.5.1",
+    "gulp-watch": "^4.3.5",
     "orchestrator": "~0.3.7"
   }
 }
